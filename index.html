@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arun Kumar S | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #00f5ff;
+      color: black;
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5, 8, 22, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: #00f5ff;
+      font-size: 28px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    nav ul li a:hover {
+      color: #00f5ff;
+    }
+
+    section {
+      padding: 100px 10%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h3 {
+      color: #00f5ff;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 {
+      font-size: 70px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #cbd5e1;
+      max-width: 650px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #00f5ff;
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: 0.4s;
+      box-shadow: 0 0 20px #00f5ff70;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px #00f5ff;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 300px;
+    }
+
+    .circle {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00f5ff, #2563eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 40px #00f5ff60;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .circle h1 {
+      font-size: 120px;
+      color: #050816;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .title {
+      font-size: 42px;
+      margin-bottom: 50px;
+      color: #00f5ff;
+      text-align: center;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.4s;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      background: #00f5ff;
+      color: black;
+    }
+
+    .skill-card h3 {
+      font-size: 22px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #111827;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.4s;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.25);
+    }
+
+    .project-image {
+      height: 220px;
+      background: linear-gradient(135deg, #00f5ff, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      font-weight: bold;
+      color: #050816;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 15px;
+      color: #00f5ff;
+    }
+
+    .project-content p {
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    .experience-card,
+    .contact-box {
+      background: #111827;
+      padding: 40px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .experience-card h2 {
+      color: #00f5ff;
+      margin-bottom: 10px;
+    }
+
+    .experience-card p,
+    .contact-box p {
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .contact-container {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #94a3b8;
+      background: #020617;
+    }
+
+    @media(max-width:900px) {
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 50px;
+      }
+
+      .circle {
+        width: 250px;
+        height: 250px;
+      }
+
+      .circle h1 {
+        font-size: 90px;
+      }
+
+      nav {
+        padding: 18px 6%;
+      }
+
+      section {
+        padding: 90px 6%;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+
+      nav ul li a {
+        font-size: 13px;
+      }
+
+      .title {
+        font-size: 34px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+
+    <h2>Arun.</h2>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <section class="hero" id="about">
+
+    <div class="hero-text">
+
+      <h3>Hello, I'm</h3>
+
+      <h1>Arun Kumar S</h1>
+
+      <p>
+        A B.Sc Computer Science & Electronics student passionate about
+        web development and technology. Currently building practical
+        projects and improving programming skills to start my career
+        in the IT industry.
+      </p>
+
+      <a href="#contact" class="btn">Hire Me</a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <div class="circle">
+        <h1>A</h1>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="skills">
+
+    <h1 class="title">Technical Skills</h1>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+        <h3>HTML</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>CSS</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>JavaScript</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>Python</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>SQL</h3>
+      </div>
+
+      <div class="skill-card">
+        <h3>DBMS</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h1 class="title">Projects</h1>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+
+        <div class="project-image">
+          FP
+        </div>
+
+        <div class="project-content">
+
+          <h3>Footstep Power Generation</h3>
+
+          <p>
+            Developed a prototype system that generates electrical
+            energy from footsteps using pressure-based sensing mechanisms.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <div class="project-image">
+          PF
+        </div>
+
+        <div class="project-content">
+
+          <h3>Portfolio Website</h3>
+
+          <p>
+            Designed and developed a responsive portfolio website using
+            HTML, CSS, and JavaScript.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="experience">
+
+    <h1 class="title">Experience</h1>
+
+    <div class="experience-card">
+
+      <h2>Domino’s Delivery Partner</h2>
+
+      <p>
+        Srirampura Branch | May 2024 – July 2024
+      </p>
+
+      <br>
+
+      <p>
+        Worked in a fast-paced environment handling deliveries,
+        customer communication, and payment coordination efficiently.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="contact">
+
+    <div class="contact-container">
+
+      <h1 class="title">Contact Me</h1>
+
+      <div class="contact-box">
+
+        <p><strong>Email:</strong> arunisac1051@gmail.com</p>
+
+        <p><strong>Phone:</strong> 9606711107</p>
+
+        <p><strong>Location:</strong> Mysore, Karnataka</p>
+
+        <p><strong>Languages:</strong> Kannada, Tamil, English</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Arun Kumar S | Portfolio
+  </footer>
+
+</body>
+
+</html>
