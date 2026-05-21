@@ -17,7 +17,7 @@ Personal portfolio website built using HTML, CSS, and JavaScript.
 - GitHub Pages
 
 ## Live Demo
-https://arungeeky.github.io
+https://arungeeky.github.io/Arun-portfolio/
 
 ## Projects Included
 ### 1. Footstep Power Generation
